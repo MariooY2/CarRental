@@ -1,8 +1,4 @@
-# React + Vite
+# Mercedes-Benz Theme Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the code for a modern, responsive website designed around the Mercedes-Benz brand. The website features a comprehensive "About" section that showcases the heritage, innovation, and vision of Mercedes-Benz. It includes a hero section, featured models, and social media integration to provide a full-fledged brand experience.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
