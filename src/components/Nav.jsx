@@ -13,7 +13,7 @@ function Nav() {
                 <div className="flex space-x-2">
                     <NavLink to="/" className={({ isActive }) => isActive ? activeClassName + " hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" : "hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"}>Home</NavLink>
                     <NavLink to="/about" className={({ isActive }) => isActive ? activeClassName + " hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" : "hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"}>About</NavLink>
-                    <NavLink to="/services" className={({ isActive }) => isActive ? activeClassName + " hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" : "hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"}>Services</NavLink>
+                    <NavLink to="/Shop" className={({ isActive }) => isActive ? activeClassName + " hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" : "hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"}>Shop</NavLink>
                     <NavLink to="/contact" className={({ isActive }) => isActive ? activeClassName + " hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium" : "hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"}>Contact</NavLink>
                 </div>
                 <NavLink to="/cart">

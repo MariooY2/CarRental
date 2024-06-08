@@ -3,7 +3,7 @@ import Error from "./UI/Error";
 import AppLayout from "./UI/AppLayout";
 import Home from "./UI/Home";
 import About from "./UI/About";
-import Services from "./UI/Services";
+import Shop from "./UI/Shop";
 import Contact from "./UI/Contact";
 import Cart from "./components/cart";
 const router = createBrowserRouter([
@@ -20,8 +20,8 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "Services",
-        element: <Services />,
+        path: "Shop",
+        element: <Shop />,
       },
       {
         path: "Contact",
