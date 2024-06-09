@@ -44,7 +44,7 @@ function Shop() {
       >
         <div className="text-center mt-4 mb-4 text-stone-100">
             <h1 className="lg:text-5xl text-3xl">Welcome to My Shop!</h1>
-            <p className="lg:text-4xl text-3xl mt-3 py-3">Discover exclusive, high-quality products tailored to enhance your lifestyle and interests</p>
+            <p className="lg:text-3xl text-xl mt-3 py-3">Discover exclusive, high-quality products tailored to enhance your lifestyle and interests</p>
         </div>
       <div className="flex w-full max-w-7xl flex-wrap justify-center p-4">
         <input
@@ -52,7 +52,7 @@ function Shop() {
           placeholder="Search for a car..."
           value={searchTerm}
           onChange={handleSearchChange}
-          className="mb-4 w-full rounded-lg p-2 text-gray-900"
+          className="mb-4 w-full rounded-lg p-2 text-gray-900 sm:p-3 md:mb-2 lg:mb-0"
         />
         <div className="flex flex-col space-y-4 rounded-lg bg-opacity-20 p-4 backdrop-blur-lg backdrop-filter">
           {filteredCars.map((car) => (

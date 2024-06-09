@@ -11,8 +11,8 @@ function About() {
                 <div className="absolute inset-0 bg-black bg-opacity-60"></div>  {/* Dark overlay for better text readability */}
                 
                 <div className="z-10">
-                    <h1 className="text-6xl font-extrabold mb-3" style={{ textShadow: '2px 2px 10px rgba(0, 0, 0, 0.6)' }}>About Mercedes-Benz</h1>
-                    <p className="text-2xl max-w-3xl mx-auto" style={{ textShadow: '1px 1px 8px rgba(0, 0, 0, 0.5)' }}>
+                    <h1 className="sm:text-6xl text-4xl font-extrabold mb-3" style={{ textShadow: '2px 2px 10px rgba(0, 0, 0, 0.6)' }}>About Mercedes-Benz</h1>
+                    <p className="sm:text-2xl text-xl max-w-3xl mx-auto" style={{ textShadow: '1px 1px 8px rgba(0, 0, 0, 0.5)' }}>
                         Innovation and excellence since 1926.
                     </p>
                     <a href="#our-story" className="mt-6 inline-block bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition-colors">Explore Our Story</a>

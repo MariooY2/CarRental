@@ -55,21 +55,22 @@ function Cart() {
                             <span className="text-center w-1/5 font-semibold text-sm">${item.price.toFixed(2)}</span>
                         </div>
                     ))}
-                    <div className="flex justify-end mt-10 space-x-4">
-                    <button
-    disabled={isCartEmpty} // Disable button when cart is empty
-    onClick={handleClearCart}
-    className={`bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ${isCartEmpty ? 'opacity-50 cursor-not-allowed' : ''}`}
->
-    Clear Cart
-</button>
-                        <button
-            disabled={isCartEmpty} // Disable button when cart is empty
-            className={`bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ${isCartEmpty ? 'opacity-50 cursor-not-allowed' : ''}`}
-        >
-            Order
-        </button>
-                        <div className="font-semibold text-2xl">Total Cost: ${total}</div>
+                   <div className="flex justify-end mt-10 space-x-1 md:space-x-4">
+    <button
+        disabled={isCartEmpty}
+        onClick={handleClearCart}
+        className={`bg-red-500 hover:bg-red-700 text-white font-bold py-0 px-1 md:px-4 rounded ${isCartEmpty ? 'opacity-50 cursor-not-allowed' : ''}`}
+    >
+        Clear Cart
+    </button>
+    <button
+        disabled={isCartEmpty}
+        className={`bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-0 px-1 md:px-4 rounded ${isCartEmpty ? 'opacity-50 cursor-not-allowed' : ''}`}
+    >
+        Order
+    </button>
+
+                        <div className="font-semibold sm:text-2xl text-lg">Total Cost: ${total}</div>
                     </div>
                 </div>
             </div>
