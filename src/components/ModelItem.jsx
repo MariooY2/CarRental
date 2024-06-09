@@ -1,13 +1,18 @@
+import { useNavigation } from "react-router-dom";
+import Spinner from "../components/Spinner"
 function ModelItem({ name, description, image }) {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
   return (
     <div className="rounded-lg bg-gray-100 p-6 shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-xl">
       {/* Image Container */}
       <div className="flex justify-center">
-        <img
+    {isLoading?<Spinner/>:<img
           src={image}
           alt={name}
           className="mb-4 h-48 w-full rounded-md object-cover"
-        />
+        />}
+        
       </div>
 
       {/* Text Content */}
