@@ -1,18 +1,33 @@
-import { useNavigation } from "react-router-dom";
 import Spinner from "../components/Spinner"
+import { useState } from "react";
 function ModelItem({ name, description, image }) {
-  const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleImageLoaded = () => {
+    setIsLoading(false);
+  };
+
+  const handleImageError = () => {
+    setIsLoading(false);
+    console.error('Failed to load image:', image);
+  };
+
+
+
   return (
     <div className="rounded-lg bg-gray-100 p-6 shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-xl">
       {/* Image Container */}
       <div className="flex justify-center">
-    {isLoading?<Spinner/>:<img
+        {isLoading ? <Spinner /> : null}
+        <img
           src={image}
           alt={name}
-          className="mb-4 h-48 w-full rounded-md object-cover"
-        />}
-        
+          className={`mb-4 h-48 w-full rounded-md object-cover ${isLoading ? 'hidden' : 'block'}`}
+          onLoad={handleImageLoaded}
+          onError={handleImageError}
+        />
       </div>
 
       {/* Text Content */}

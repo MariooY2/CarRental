@@ -1,4 +1,9 @@
 function Contact() {
+  function getCurrentYear() {
+    const date = new Date(); // Create a new Date object representing the current date and time
+    const year = date.getFullYear(); // Get the full year from the date object
+    return year; // Return the year
+  }
   return (
     <div className="flex flex-col items-center text-gray-700">
       {/* Header Section */}
@@ -76,7 +81,7 @@ function Contact() {
 
       {/* Footer Section */}
       <footer className="mt-auto w-full bg-gray-800 p-4 text-center text-white">
-        <p>© 2024 Mercedes-Benz. All rights reserved.</p>
+        <p>© {getCurrentYear()} Mercedes-Benz. All rights reserved.</p>
       </footer>
     </div>
   );

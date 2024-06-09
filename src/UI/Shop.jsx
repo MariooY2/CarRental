@@ -1,14 +1,31 @@
 import products from "../UX/products";
-import { useState } from "react";
-import { useNavigation } from "react-router-dom";
+import { useState,useEffect } from "react";
 import Spinner from "../components/Spinner";
 import { useDispatch } from 'react-redux';
 import { addItem } from "../UX/cartSlice"
+
 function Shop() {
   const [selectedCar, setSelectedCar] = useState(products[0]); // Default to the first car
   const [searchTerm, setSearchTerm] = useState(""); // State for search input
-  const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+  const [imageLoading, setImageLoading] = useState(true);
+
+  const handleImageLoaded = () => {
+   
+    setImageLoading(false);
+  };
+  useEffect(() => {
+    // Trigger image loading state whenever the selectedCar changes
+    setImageLoading(true);
+  }, [selectedCar]);
+  
+  const handleImageError = () => {
+    setImageLoading(false);
+  };
+  const handleSelectCar = (car) => {
+    setSelectedCar(car);
+    setImageLoading(false); // Set loading true when car is selected
+  };
+  
   const dispatch = useDispatch();
   const filteredCars = products.filter((car) =>
     car.name.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -57,26 +74,32 @@ function Shop() {
         <div className="flex flex-col space-y-4 rounded-lg bg-opacity-20 p-4 backdrop-blur-lg backdrop-filter">
           {filteredCars.map((car) => (
             <button
-              key={car.id}
-              onClick={() => setSelectedCar(car)}
-              className={`w-full p-3 text-left ${selectedCar.id === car.id ? "bg-blue-600 text-white" : "bg-white text-gray-900"} rounded-lg shadow-sm transition-colors hover:border-blue-500 hover:bg-blue-500 hover:shadow-md`}
-            >
-              {car.name}
-            </button>
+    key={car.id}
+    onClick={() => handleSelectCar(car)}
+    className={`w-full p-3 text-left ${selectedCar.id === car.id ? "bg-blue-600 text-white" : "bg-white text-gray-900"} rounded-lg shadow-sm transition-colors hover:border-blue-500 hover:bg-blue-500 hover:shadow-md`}
+    >
+  {car.name}
+</button>
+
           ))}
         </div>
 
         <div className="mt-4 flex flex-col justify-center rounded-lg lg:ml-4 lg:mt-0">
           <div className="flex justify-center">
-            {isLoading ? (
-              <Spinner />
-            ) : (
-              <img
-                src={selectedCar.imageUrl}
-                alt={selectedCar.name}
-                className="h-64 w-full max-w-md rounded-lg object-cover"
-              />
-            )}
+          {imageLoading && (
+        <Spinner />
+          )}
+            <div className={`${imageLoading ? 'hidden' : 'visible'}`}>
+            <img
+              key={selectedCar.id} // Ensure component updates correctly
+              src={selectedCar.imageUrl}
+              alt={selectedCar.name}
+              className="h-64 w-full max-w-md rounded-lg object-cover"
+              onLoad={handleImageLoaded}
+              onError={handleImageError}
+            />
+          </div>
+ 
           </div>
 
           <div className="p-4 text-center lg:text-left">

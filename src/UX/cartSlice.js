@@ -36,7 +36,6 @@ const cartSlice = createSlice({
         
         const index = state.cart.findIndex(item => item.id === action.payload.id);
         if (index !== -1) {
-            console.log(1)
             state.cart[index].quantity = action.payload.quantity;
             state.cart[index].totalPrice = state.cart[index].unitPrice * action.payload.quantity;  // Also update total price if needed
         }

@@ -9,6 +9,7 @@ function getCurrentYear() {
 }
 
 function Home() {
+  
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}

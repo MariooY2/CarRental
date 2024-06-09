@@ -4,7 +4,6 @@ import Loader from '../components/Loader';
 import React, { useState, useEffect } from 'react';
 function AppLayout() {
     const navigation = useNavigation();
-    console.log(navigation.state)
     const isLoading = navigation.state === 'loading';
     const [isLoad, setIsLoading] = useState(true);
 
@@ -12,7 +11,7 @@ function AppLayout() {
         // Set a timer to change isLoading to false after 3 seconds
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 3000); // 3000 milliseconds = 3 seconds
+        }, 4000); // 3000 milliseconds = 3 seconds
 
         // Clean up the timer if the component unmounts before the timer is up
         return () => clearTimeout(timer);
